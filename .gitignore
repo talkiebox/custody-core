@@ -1,0 +1,33 @@
+# AI / Codex
+AGENTS.md
+PRD.md
+.claude/
+.codex/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Node.js / NestJS
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Java / Spring Boot
+.gradle/
+build/
+target/
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+
+# Logs
+*.log

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>지갑 조회</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="lookup-panel surface-panel" aria-labelledby="page-title">
+            <div class="title-group">
+                <p class="eyebrow">Blockchain Explorer</p>
+                <h2 id="page-title">지갑 조회</h2>
+            </div>
+
+            <form class="form-stack" id="wallet-form">
+                <label class="input-field" for="wallet-address">
+                    <span>Wallet address</span>
+                    <input
+                        id="wallet-address"
+                        name="address"
+                        type="text"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
+                        required
+                    >
+                </label>
+                <button class="primary-button" type="submit">
+                    <span class="button-icon" aria-hidden="true"></span>
+                    <span>조회</span>
+                </button>
+            </form>
+
+            <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="result-panel wallet-result-panel" aria-label="Wallet details">
+            <div class="card-header">
+                <div>
+                    <p class="eyebrow">Address</p>
+                    <p class="address-value" id="address-value">-</p>
+                </div>
+                <span class="status-chip" id="network-value">Ready</span>
+            </div>
+
+            <div class="metric-grid">
+                <article class="metric-card">
+                    <span class="metric-label">Balance</span>
+                    <strong class="metric-value" id="balance-value">-</strong>
+                    <span class="metric-unit" id="balance-unit">ETH</span>
+                </article>
+                <article class="metric-card">
+                    <span class="metric-label">Nonce</span>
+                    <strong class="metric-value" id="nonce-value">-</strong>
+                    <span class="metric-unit">transactions</span>
+                </article>
+                <article class="metric-card">
+                    <span class="metric-label">Last updated</span>
+                    <strong class="metric-value compact" id="updated-value">-</strong>
+                    <span class="metric-unit">local time</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="transfer-panel surface-panel" aria-labelledby="transfer-title">
+            <form class="form-stack" id="transfer-form">
+                <div class="section-heading">
+                    <p class="eyebrow">Coin Transfer</p>
+                    <h2 id="transfer-title">코인 전송</h2>
+                </div>
+
+                <label class="input-field" for="recipient-address">
+                    <span>상대방 주소</span>
+                    <input
+                        id="recipient-address"
+                        name="recipientAddress"
+                        type="text"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="0x0000000000000000000000000000000000000000"
+                        required
+                    >
+                </label>
+
+                <label class="input-field" for="transfer-amount">
+                    <span>전송할 금액</span>
+                    <input
+                        id="transfer-amount"
+                        name="amount"
+                        type="number"
+                        inputmode="decimal"
+                        min="0"
+                        step="0.000001"
+                        placeholder="0.05"
+                        required
+                    >
+                </label>
+
+                <button class="primary-button secondary-action" type="submit">
+                    <span class="send-icon" aria-hidden="true"></span>
+                    <span>전송</span>
+                </button>
+            </form>
+
+            <p class="form-message" id="transfer-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="transfer-result-panel surface-panel" aria-label="Transfer result">
+            <div class="card-header">
+                <div>
+                    <p class="eyebrow">Transfer Result</p>
+                    <h2>전송 결과</h2>
+                </div>
+                <span class="status-chip" id="transfer-status-value">Ready</span>
+            </div>
+
+            <div class="transfer-summary">
+                <article class="detail-row">
+                    <span class="metric-label">Recipient</span>
+                    <strong class="address-value" id="transfer-recipient-value">-</strong>
+                </article>
+                <article class="detail-row">
+                    <span class="metric-label">Amount</span>
+                    <strong class="metric-value compact" id="transfer-amount-value">-</strong>
+                </article>
+                <article class="detail-row">
+                    <span class="metric-label">Transaction</span>
+                    <strong class="address-value" id="transfer-hash-value">-</strong>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script src="/app.js?v=20260628-real-account-query" defer></script>
+</body>
+</html>
